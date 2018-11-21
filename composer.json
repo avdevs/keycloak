@@ -1,0 +1,20 @@
+{
+    "name": "avdevs/keycloak",
+    "description": "Keycloak OAuth2 Provider for Laravel Socialite",
+    "license": "MIT",
+    "authors": [{
+        "name": "Dhaval Patel",
+        "email": "dhaval@avdevs.com"
+    }],
+    "require": {
+        "firebase/php-jwt": "^4.0",
+        "php": "^5.6 || ^7.0",
+        "socialiteproviders/manager": "~2.0 || ~3.0",
+        "league/oauth2-client": "2.2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Avdevs\\Keycloak\\": "src"
+        }
+    }
+}

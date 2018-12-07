@@ -24,27 +24,33 @@ Add below key array in '/config/services.php' file.
             'encryptionKey'         => env('KEYCLOAK_ENCRYPTIONKEY'),
     ]
 ```
-### Laravel Socialite > SocialiteManager Class Modifications
+### Laravel AppServiceProvider
 
-Add below code in /vendor/laravel/socialite/src/SocialiteManager.php
+Add below code in /app/Providers/AppServiceProvider.php
 file which helps to execute keycloak as a socialite provider.
 
 ```php
     use Avdevs\Keycloak\KeycloakProvider;
 ```
 
-```php
-    /**
-     * Create an instance of the keycloak driver.
-     *
-     * @return
-     */
-    protected function createKeycloakDriver()
-    {
-        $config = $this->app['config']['services.keycloak'];
+In boot() method, add below code
 
-        return new KeycloakProvider(
-            $config
+```php
+    $this->bootKeycloakSocialite();
+```
+
+Add Function
+
+```php
+    private function bootKeycloakSocialite()
+    {
+        $socialite = $this->app->make('Laravel\Socialite\Contracts\Factory');
+        $socialite->extend(
+            'keycloak',
+            function ($app) use ($socialite) {
+                $config = $app['config']['services.keycloak'];
+                return new KeycloakProvider($config);
+            }
         );
     }
 ```

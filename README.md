@@ -18,7 +18,7 @@ Add below key array in '/config/services.php' file.
             'realm'                 => env('KEYCLOAK_REALM'),
             'clientId'              => env('KEYCLOAK_CLIENTID'),
             'clientSecret'          => env('KEYCLOAK_CLIENTSECRET'),
-            'redirectUri'           => env('KEYCLOAK_REDIRECTURUI'),
+            'redirectUri'           => env('KEYCLOAK_REDIRECTURI'),
             'encryptionAlgorithm'   => env('KEYCLOAK_ENCRYPTIONALGORITHM'),
             'encryptionKeyPath'     => env('KEYCLOAK_ENCRYPTIONKEYPATH'),
             'encryptionKey'         => env('KEYCLOAK_ENCRYPTIONKEY'),

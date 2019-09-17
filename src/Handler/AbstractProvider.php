@@ -18,8 +18,6 @@ use UnexpectedValueException;
 
 /**
  * Represents a service provider (authorization server).
- *
- * @link http://tools.ietf.org/html/rfc6749#section-1.1 Roles (RFC 6749, §1.1)
  */
 abstract class AbstractProvider
 {
@@ -218,8 +216,6 @@ abstract class AbstractProvider
 
     /**
      * Returns the base URL for authorizing a client.
-     *
-     * Eg. https://oauth.service.com/authorize
      *
      * @return string
      */
@@ -771,9 +767,6 @@ abstract class AbstractProvider
 
     /**
      * Returns the authorization headers used by this provider.
-     *
-     * Typically this is "Bearer" or "MAC". For more information see:
-     * http://tools.ietf.org/html/rfc6749#section-7.1
      *
      * No default is provided, providers must overload this method to activate
      * authorization headers.

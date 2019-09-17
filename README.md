@@ -2,7 +2,8 @@
 
 ### Installation
 ```
-    git clone https://github.com/avdevs/keycloak.git
+    clone : git clone https://github.com/avdevs/keycloak.git
+    installing package : composer require avdevs/keycloak
 ```
 
 ### Requirements

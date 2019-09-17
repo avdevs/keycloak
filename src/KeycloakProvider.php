@@ -39,10 +39,6 @@ class KeycloakProvider extends AbstractProvider
     /**
      * Encryption algorithm.
      *
-     * You must specify supported algorithms for your application. See
-     * https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-40
-     * for a list of spec-compliant algorithms.
-     *
      * @var string
      */
     public $encryptionAlgorithm = null;

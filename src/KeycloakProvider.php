@@ -346,9 +346,11 @@ class KeycloakProvider extends AbstractProvider
                 $user = $this->getResourceOwner($token);
                 if ($user) {
                     $socialUser = (object)[
+                        'token' => $token,
                         'id' => $user->getId(),
                         'name' => $user->getName(),
-                        'email' => $user->getEmail()
+                        'email' => $user->getEmail(),
+                        'raw' => $user->toArray()
                     ];
                 }
             } catch (\Exception $e) {
